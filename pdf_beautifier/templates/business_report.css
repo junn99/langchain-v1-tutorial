@@ -1,0 +1,255 @@
+/* 비즈니스 보고서 스타일 CSS */
+
+@page {
+    size: A4;
+    margin: 2.5cm 2cm;
+
+    @top-center {
+        content: string(document-title);
+        font-size: 10pt;
+        color: #666;
+        padding-bottom: 10pt;
+        border-bottom: 1pt solid #e0e0e0;
+    }
+
+    @bottom-center {
+        content: "Page " counter(page) " of " counter(pages);
+        font-size: 9pt;
+        color: #999;
+    }
+}
+
+/* 기본 폰트 및 레이아웃 */
+body {
+    font-family: 'Noto Sans KR', 'Malgun Gothic', sans-serif;
+    font-size: 11pt;
+    line-height: 1.6;
+    color: #333;
+    background-color: #ffffff;
+}
+
+/* 제목 스타일 */
+h1 {
+    string-set: document-title content();
+    font-size: 24pt;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-top: 0;
+    margin-bottom: 24pt;
+    padding-bottom: 12pt;
+    border-bottom: 3pt solid #2563eb;
+    page-break-after: avoid;
+}
+
+h2 {
+    font-size: 18pt;
+    font-weight: 600;
+    color: #1e40af;
+    margin-top: 24pt;
+    margin-bottom: 12pt;
+    padding-left: 8pt;
+    border-left: 4pt solid #3b82f6;
+    page-break-after: avoid;
+}
+
+h3 {
+    font-size: 14pt;
+    font-weight: 600;
+    color: #1e3a8a;
+    margin-top: 18pt;
+    margin-bottom: 10pt;
+    page-break-after: avoid;
+}
+
+h4 {
+    font-size: 12pt;
+    font-weight: 600;
+    color: #1e40af;
+    margin-top: 14pt;
+    margin-bottom: 8pt;
+    page-break-after: avoid;
+}
+
+/* 단락 */
+p {
+    margin-bottom: 12pt;
+    text-align: justify;
+    orphans: 3;
+    widows: 3;
+}
+
+/* 강조 */
+strong, b {
+    font-weight: 700;
+    color: #1a1a1a;
+}
+
+em, i {
+    font-style: italic;
+    color: #374151;
+}
+
+/* 목록 */
+ul, ol {
+    margin-bottom: 12pt;
+    margin-left: 20pt;
+}
+
+li {
+    margin-bottom: 6pt;
+    line-height: 1.5;
+}
+
+ul li {
+    list-style-type: disc;
+}
+
+ul ul li {
+    list-style-type: circle;
+}
+
+ol li {
+    list-style-type: decimal;
+}
+
+/* 코드 블록 */
+code {
+    font-family: 'Consolas', 'Monaco', monospace;
+    font-size: 9.5pt;
+    background-color: #f3f4f6;
+    padding: 2pt 4pt;
+    border-radius: 3pt;
+    color: #dc2626;
+}
+
+pre {
+    background-color: #f9fafb;
+    border: 1pt solid #e5e7eb;
+    border-left: 4pt solid #6366f1;
+    border-radius: 4pt;
+    padding: 12pt;
+    margin-bottom: 12pt;
+    overflow-x: auto;
+    page-break-inside: avoid;
+}
+
+pre code {
+    background-color: transparent;
+    padding: 0;
+    color: #111827;
+    font-size: 9pt;
+    line-height: 1.4;
+}
+
+/* 인용구 */
+blockquote {
+    border-left: 4pt solid #9ca3af;
+    background-color: #f9fafb;
+    margin: 12pt 0;
+    padding: 10pt 16pt;
+    font-style: italic;
+    color: #4b5563;
+    page-break-inside: avoid;
+}
+
+/* 테이블 */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 16pt;
+    font-size: 10pt;
+    page-break-inside: avoid;
+}
+
+thead {
+    background-color: #1e40af;
+    color: white;
+    font-weight: 600;
+}
+
+th {
+    padding: 10pt 8pt;
+    text-align: left;
+    border: 1pt solid #cbd5e1;
+}
+
+td {
+    padding: 8pt;
+    border: 1pt solid #e5e7eb;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f8fafc;
+}
+
+tbody tr:hover {
+    background-color: #f1f5f9;
+}
+
+/* 수평선 */
+hr {
+    border: none;
+    border-top: 1pt solid #d1d5db;
+    margin: 20pt 0;
+}
+
+/* 링크 */
+a {
+    color: #2563eb;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* 이미지 */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 12pt auto;
+    page-break-inside: avoid;
+}
+
+/* 하이라이트 박스 */
+.info-box {
+    background-color: #dbeafe;
+    border-left: 4pt solid #3b82f6;
+    padding: 12pt;
+    margin-bottom: 12pt;
+    border-radius: 4pt;
+    page-break-inside: avoid;
+}
+
+.warning-box {
+    background-color: #fef3c7;
+    border-left: 4pt solid #f59e0b;
+    padding: 12pt;
+    margin-bottom: 12pt;
+    border-radius: 4pt;
+    page-break-inside: avoid;
+}
+
+.success-box {
+    background-color: #d1fae5;
+    border-left: 4pt solid #10b981;
+    padding: 12pt;
+    margin-bottom: 12pt;
+    border-radius: 4pt;
+    page-break-inside: avoid;
+}
+
+/* 페이지 구분 */
+.page-break {
+    page-break-after: always;
+}
+
+/* 각주 */
+.footnote {
+    font-size: 9pt;
+    color: #6b7280;
+    margin-top: 20pt;
+    padding-top: 10pt;
+    border-top: 1pt solid #e5e7eb;
+}
